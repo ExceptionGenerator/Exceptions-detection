@@ -18,6 +18,10 @@ public class ExceptionDetection {
      */
     public ExceptionDetection(String rootReadDir) throws FileNotFoundException {
         rootReadDirPath=new File(rootReadDir);
+        if(!rootReadDirPath.isDirectory()){
+            System.out.println("Sorry ! please provide only root directory path");
+            System.exit(0);
+        }
         rootWritePath=new File(rootReadDirPath.getAbsolutePath()+"//output");
         rootWritePath.mkdirs();
         rootWritePath=new File(rootWritePath.getAbsolutePath()+"//exceptions.log");
@@ -34,10 +38,6 @@ public class ExceptionDetection {
      * @throws FileNotFoundException
      */
     private void readAllFiles(File file) throws FileNotFoundException {
-        if(!file.isDirectory()){
-            System.out.println("Sorry ! please provide only directory path");
-            System.exit(0);
-        }
         File[] files=file.listFiles();
         if(files!=null)
             for(File file1:files)
