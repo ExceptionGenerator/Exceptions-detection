@@ -41,6 +41,10 @@ public class Main {
             test1(file1);
     }
 
+    /**
+     * writing into a file
+     * @param fileName
+     */
     public void writeInToFile(String fileName){
         printWriter.append(fileName);
         printWriter.flush();
