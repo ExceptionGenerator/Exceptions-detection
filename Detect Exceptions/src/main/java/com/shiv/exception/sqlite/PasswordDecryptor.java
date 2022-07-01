@@ -18,6 +18,8 @@ public class PasswordDecryptor {
 
     private String[] roles={"Admin","Auditor","Manager","Technician","SuperAdmin"};
     private String keyString="spectrum and lattice";
+    // change db name according to db kfcomm2.db or kfcomm2c.db
+    private static final String DB_NAME="kfcomm2c.db";
     private static SecretKeySpec secretKey;
     private static byte[] key;
     public static final String FETCH_DETAILS="select user_master.user_id,user_master.username,user_role_map.is_active,user_role_map.role_id from\n" +
@@ -28,7 +30,7 @@ public class PasswordDecryptor {
         System.out.println(System.getProperty("user.dir"));
         Class.forName("org.sqlite.JDBC");
         // inside current dir create dir named with jre and paste db file inside the jre dir
-        connection= DriverManager.getConnection("jdbc:sqlite:file:./jre/kfcomm2c.db?cipher=aes256cbc&legacy=1&kdf_iter=4000&key=a+9R]y(=%VpbPryLvTBp",getSqliteConfig().toProperties());
+        connection= DriverManager.getConnection("jdbc:sqlite:file:./jre/"+DB_NAME+"?cipher=aes256cbc&legacy=1&kdf_iter=4000&key=a+9R]y(=%VpbPryLvTBp",getSqliteConfig().toProperties());
         System.out.println("Connection successfully");
     }
 
