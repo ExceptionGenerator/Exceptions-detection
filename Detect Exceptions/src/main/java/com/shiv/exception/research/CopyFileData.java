@@ -12,7 +12,7 @@ import java.nio.file.StandardCopyOption;
 public class CopyFileData {
     public static void main(String[] args) throws IOException {
 
-        long totalBytes= CopyFileData.builder().build().copy("KF Comm 2C.zip");
+        long totalBytes= CopyFileData.builder().build().copy("shg.txt");
         System.out.println(totalBytes);
     }
 
@@ -23,8 +23,8 @@ public class CopyFileData {
      * @throws IOException
      */
     public long copy(String sourceFileName) throws IOException {
-        Path destinationPath= Paths.get("C:\\Users\\Dell\\Downloads\\log\\copy"+sourceFileName);
-        InputStream sourceInputStream=new FileInputStream("C:\\Users\\Dell\\Downloads\\log\\"+sourceFileName);
+        Path destinationPath= Paths.get("E:\\Shiv Projects\\installer\\copy"+sourceFileName);
+        InputStream sourceInputStream=new FileInputStream("E:\\Shiv Projects\\installer\\"+sourceFileName);
         return Files.copy(sourceInputStream,destinationPath, StandardCopyOption.REPLACE_EXISTING);
     }
 }
