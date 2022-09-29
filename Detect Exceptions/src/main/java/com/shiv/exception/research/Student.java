@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,4 +15,5 @@ public class Student {
     private int id;
     private int age;
     private String name;
+    private Date date;
 }
