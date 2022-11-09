@@ -1,6 +1,6 @@
 package com.shiv.exception.research;
 
-class LinkNode<T>{
+class LinkNode<T extends Comparable<T>> implements Comparable<LinkNode<T>>{
     protected LinkNode prevNode;
     protected LinkNode nextNode;
     protected T data;
@@ -8,9 +8,18 @@ class LinkNode<T>{
     public LinkNode(T data){
         this.data=data;
     }
+
+    public T getT(){
+        return data;
+    }
+
+    @Override
+    public int compareTo(LinkNode<T> o) {
+        return getT().compareTo(o.getT());
+    }
 }
 
-public class DoublyLinkedList<T> {
+public class DoublyLinkedList<T extends Comparable<T>> {
     /* root node */
     private LinkNode head;
     /* leaf node */
@@ -22,7 +31,7 @@ public class DoublyLinkedList<T> {
      * @param data
      */
     public void addNode(T data){
-        LinkNode node=new LinkNode<>(data);
+        LinkNode node=new LinkNode<T>(data);
         if(length==0){
             head=node;
         }
@@ -58,31 +67,50 @@ public class DoublyLinkedList<T> {
      */
     public void show(){
         StringBuilder stringBuilder=new StringBuilder("{");
-        LinkNode tempNode=tail;
-        while (tempNode.prevNode!=null){
+        LinkNode tempNode=head;
+        while (tempNode.nextNode!=null){
             stringBuilder.append(tempNode.data).append(",");
-            tempNode=tempNode.prevNode;
+            tempNode=tempNode.nextNode;
         }
         stringBuilder.append(tempNode.data).append("}");
         System.out.println(stringBuilder.toString());
     }
 
+    /**
+     * sorting element in ascending order
+     */
+    public void sort(){
+        LinkNode current=head,index=null;
+        Comparable temp;
+        if(head==null)
+            return;
+        while (current!=null){
+            index=current.nextNode;
+            while (index!=null){
+                if(current.data.compareTo(index.data)>0){
+                    temp=current.data;
+                    current.data=index.data;
+                    index.data=temp;
+                }
+                index=index.nextNode;
+            }
+            current=current.nextNode;
+        }
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList<Integer> doublyLinkedList=new DoublyLinkedList();
-        doublyLinkedList.addNode(10);
-        doublyLinkedList.addNode(11);
-        doublyLinkedList.addNode(12);
+        doublyLinkedList.addNode(2);
+        doublyLinkedList.addNode(5);
         doublyLinkedList.addNode(13);
         doublyLinkedList.addNode(14);
-        doublyLinkedList.addNode(15);
-        doublyLinkedList.addNode(16);
-        doublyLinkedList.addNode(17);
         doublyLinkedList.addNode(18);
-        doublyLinkedList.addNode(19);
+        doublyLinkedList.addNode(11);
+        doublyLinkedList.addNode(1);
+        doublyLinkedList.addNode(8);
+        doublyLinkedList.addNode(9);
         doublyLinkedList.show();
-        System.out.println("Length-"+doublyLinkedList.length());
-        doublyLinkedList.remove();
+        doublyLinkedList.sort();
         doublyLinkedList.show();
-        System.out.println("Length-"+doublyLinkedList.length());
     }
 }
