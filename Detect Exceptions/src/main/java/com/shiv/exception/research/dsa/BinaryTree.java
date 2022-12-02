@@ -62,6 +62,19 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    public TreeNode<T> findByKeyInPostOrder(TreeNode<T> rootNode,T key){
+        if(rootNode!=null){
+            if(rootNode.data.compareTo(key)==0)
+                return rootNode;
+            else{
+                return findByKeyInPostOrder(rootNode.leftNode,key);
+            }
+        }
+        else
+            return null;
+//        return rootNode;
+    }
+
     public TreeNode<T> deleteNode(TreeNode<T> rootNode,T key){
         if(rootNode==null){
             return rootNode;
@@ -93,6 +106,19 @@ public class BinaryTree<T extends Comparable<T>> {
         return data;
     }
 
+    public int maxDepth(TreeNode<T> rootNode){
+        if(rootNode==null)
+            return 0;
+        else {
+            int lDepth=maxDepth(rootNode.leftNode);
+            int rDepth=maxDepth(rootNode.rightNode);
+            if(lDepth>rDepth)
+                return lDepth+1;
+            else
+                return rDepth+1;
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode rootNode=new TreeNode<>(12);
         BinaryTree<Integer> binaryTree=new BinaryTree<>();
@@ -105,13 +131,20 @@ public class BinaryTree<T extends Comparable<T>> {
         binaryTree.addNode(rootNode,4);
         binaryTree.addNode(rootNode,3);
         binaryTree.addNode(rootNode,20);
-        binaryTree.inOrderTraversal(rootNode);
-        binaryTree.deleteNode(rootNode,20);
-        System.out.println();
-        binaryTree.inOrderTraversal(rootNode);
-        System.out.println();
+//        binaryTree.inOrderTraversal(rootNode);
+//        binaryTree.deleteNode(rootNode,20);
+//        System.out.println();
+//        binaryTree.inOrderTraversal(rootNode);
+//        System.out.println();
+//        binaryTree.preOrderTraversal(rootNode);
+//        System.out.println();
+//        binaryTree.postOrderTraversal(rootNode);
         binaryTree.preOrderTraversal(rootNode);
         System.out.println();
+        binaryTree.inOrderTraversal(rootNode);
+        System.out.println();
         binaryTree.postOrderTraversal(rootNode);
+        System.out.println();
+        System.out.println(binaryTree.maxDepth(rootNode));
     }
 }

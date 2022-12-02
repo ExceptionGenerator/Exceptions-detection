@@ -58,6 +58,31 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         length--;
     }
 
+    /**
+     * deletion of a node of the given key [if key matched with node data]
+     */
+    public boolean remove(T key){
+        LinkNode<T> tempNode=head;
+        if(head!=null){
+            while (tempNode!=null){
+                if(tempNode.data.compareTo(key)==0){
+                    if(tempNode.prevNode==null)
+                        head=tempNode.nextNode;
+                    else
+                        tempNode.prevNode.nextNode=tempNode.nextNode;
+                    if(tempNode.nextNode==null)
+                        tail=tempNode.prevNode;
+                    else
+                        tempNode.nextNode.prevNode=tempNode.prevNode;
+                    length--;
+                    return true;
+                }
+                tempNode=tempNode.nextNode;
+            }
+        }
+        return false;
+    }
+
     public int length(){
         return length;
     }
@@ -68,12 +93,14 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public void show(){
         StringBuilder stringBuilder=new StringBuilder("{");
         LinkNode tempNode=head;
-        while (tempNode.nextNode!=null){
-            stringBuilder.append(tempNode.data).append(",");
+        while (tempNode!=null){
+            stringBuilder.append(tempNode.data);
             tempNode=tempNode.nextNode;
+            if(tempNode!=null)
+                stringBuilder.append(",");
         }
-        stringBuilder.append(tempNode.data).append("}");
-        System.out.println(stringBuilder.toString());
+        stringBuilder.append("}");
+        System.out.println(stringBuilder);
     }
 
     /**
@@ -110,7 +137,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         doublyLinkedList.addNode(8);
         doublyLinkedList.addNode(9);
         doublyLinkedList.show();
-        doublyLinkedList.sort();
+        System.out.println(doublyLinkedList.remove(2));
         doublyLinkedList.show();
     }
 }
