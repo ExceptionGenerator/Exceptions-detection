@@ -1,4 +1,4 @@
-package com.shiv.exception.research;
+package com.shiv.exception.research.dsa;
 
 public class QueueImpl<T> {
     private int rear;

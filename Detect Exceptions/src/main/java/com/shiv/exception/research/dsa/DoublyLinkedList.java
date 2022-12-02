@@ -1,4 +1,4 @@
-package com.shiv.exception.research;
+package com.shiv.exception.research.dsa;
 
 class LinkNode<T extends Comparable<T>> implements Comparable<LinkNode<T>>{
     protected LinkNode prevNode;
@@ -90,7 +90,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     /**
      * back traversal
      */
-    public void show(){
+    @Override
+    public String toString(){
         StringBuilder stringBuilder=new StringBuilder("{");
         LinkNode tempNode=head;
         while (tempNode!=null){
@@ -100,7 +101,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                 stringBuilder.append(",");
         }
         stringBuilder.append("}");
-        System.out.println(stringBuilder);
+        return stringBuilder.toString();
     }
 
     /**
@@ -125,19 +126,12 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public static void main(String[] args) {
-        DoublyLinkedList<Integer> doublyLinkedList=new DoublyLinkedList();
-        doublyLinkedList.addNode(2);
-        doublyLinkedList.addNode(5);
-        doublyLinkedList.addNode(13);
-        doublyLinkedList.addNode(14);
-        doublyLinkedList.addNode(18);
-        doublyLinkedList.addNode(11);
-        doublyLinkedList.addNode(1);
-        doublyLinkedList.addNode(8);
-        doublyLinkedList.addNode(9);
-        doublyLinkedList.show();
-        System.out.println(doublyLinkedList.remove(2));
-        doublyLinkedList.show();
+    public LinkNode<T> getTailNode(){
+        return tail;
     }
+
+    public LinkNode<T> getHeadNode(){
+        return head;
+    }
+
 }

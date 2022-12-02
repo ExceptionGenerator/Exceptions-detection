@@ -1,4 +1,4 @@
-package com.shiv.exception.research;
+package com.shiv.exception.research.dsa;
 
 import lombok.ToString;
 
