@@ -20,7 +20,7 @@ class Graph<T>{
         map.get(source).add(destination);
         if(isBidirectional)
             map.get(destination).add(source);
-        System.out.println(map);
+//        System.out.println(map);
     }
 }
 public class GraphImplementation{
@@ -31,6 +31,7 @@ public class GraphImplementation{
         graph.addNewEdge(2,7,true);
         graph.addNewEdge(2,8,false);
         graph.addNewEdge(2,9,false);
-        System.out.println(graph.map.keySet());
+        System.out.println(graph.map);
+//        System.out.println(graph.map.keySet());
     }
 }
