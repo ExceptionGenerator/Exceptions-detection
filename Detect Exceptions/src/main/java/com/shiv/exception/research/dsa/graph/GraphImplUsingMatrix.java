@@ -24,6 +24,13 @@ public class GraphImplUsingMatrix {
         System.out.println("Total vertex-"+getVertexCount(array));
     }
 
+    /**
+     *
+     * @param arr array of the matrix 2D
+     * @param source source vertex
+     * @param destination destination vertex
+     * @param isBiDirectional if is it bidirectional or not
+     */
     public static void addEdge(int arr[][], int source,int destination,boolean isBiDirectional){
         arr[source][destination]=1;
         if(isBiDirectional)
