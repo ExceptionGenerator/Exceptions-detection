@@ -1,1 +1,2 @@
-println("Hello world")
+import os
+print(os.name())
