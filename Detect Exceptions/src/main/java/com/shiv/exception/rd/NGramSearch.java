@@ -28,8 +28,17 @@ public class NGramSearch{
 
     private List<Student> students=new ArrayList<>();
     public static void main(String[] args) {
-        var rand=new NGramSearch();
-        rand.filterStudents("Shvimohn").forEach(System.out::println);
+        System.out.println(re("fun&!! time"));
+        System.out.println(re("wwwyytt"));
+    }
+
+    public static String re(String sen){
+        String[] arr=sen.split(" ");
+        String finalString="";
+        String token="5nyk7xf3";
+        int length=0;
+        char ch1='3';
+        return new StringBuilder(finalString).reverse().toString().concat(":"+ new StringBuilder(token).reverse());
     }
 
     /**

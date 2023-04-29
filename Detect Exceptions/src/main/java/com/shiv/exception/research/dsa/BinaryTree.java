@@ -97,6 +97,24 @@ public class BinaryTree<T extends Comparable<T>> {
         return rootNode;
     }
 
+    public TreeNode<T> delete(TreeNode<T> rootNode,T key){
+        if(rootNode==null)
+            return rootNode;
+        if(key.compareTo(rootNode.data)>0)
+            rootNode.rightNode=deleteNode(rootNode.rightNode,key);
+        else if(key.compareTo(rootNode.data)<0)
+            rootNode.leftNode=deleteNode(rootNode.leftNode,key);
+        else {
+            if(rootNode.leftNode==null)
+                return rootNode.rightNode;
+            else if(rootNode.rightNode==null)
+                return rootNode.leftNode;
+            rootNode.data=getMin(rootNode.rightNode);
+            rootNode.rightNode=deleteNode(rootNode.rightNode,rootNode.data);
+        }
+        return rootNode;
+    }
+
     private T getMin(TreeNode<T> rootNode){
         T data=rootNode.data;
         while (rootNode.leftNode!=null){
@@ -112,6 +130,7 @@ public class BinaryTree<T extends Comparable<T>> {
         else {
             int lDepth=maxDepth(rootNode.leftNode);
             int rDepth=maxDepth(rootNode.rightNode);
+            System.out.println("data-"+rootNode.data);
             if(lDepth>rDepth)
                 return lDepth+1;
             else
@@ -120,31 +139,21 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
-        TreeNode rootNode=new TreeNode<>(12);
+        TreeNode rootNode=new TreeNode<>(100);
         BinaryTree<Integer> binaryTree=new BinaryTree<>();
-        binaryTree.addNode(rootNode,10);
-        binaryTree.addNode(rootNode,11);
-        binaryTree.addNode(rootNode,11);
-        binaryTree.addNode(rootNode,13);
-        binaryTree.addNode(rootNode,14);
-        binaryTree.addNode(rootNode,5);
-        binaryTree.addNode(rootNode,4);
-        binaryTree.addNode(rootNode,3);
-        binaryTree.addNode(rootNode,20);
-//        binaryTree.inOrderTraversal(rootNode);
-//        binaryTree.deleteNode(rootNode,20);
-//        System.out.println();
-//        binaryTree.inOrderTraversal(rootNode);
-//        System.out.println();
-//        binaryTree.preOrderTraversal(rootNode);
-//        System.out.println();
-//        binaryTree.postOrderTraversal(rootNode);
+        binaryTree.addNode(rootNode,90);
+        binaryTree.addNode(rootNode,80);
+        binaryTree.addNode(rootNode,120);
+        binaryTree.addNode(rootNode,128);
+        binaryTree.addNode(rootNode,119);
+        binaryTree.addNode(rootNode,91);
         binaryTree.preOrderTraversal(rootNode);
         System.out.println();
-        binaryTree.inOrderTraversal(rootNode);
-        System.out.println();
-        binaryTree.postOrderTraversal(rootNode);
-        System.out.println();
-        System.out.println(binaryTree.maxDepth(rootNode));
+        TreeNode data= binaryTree.deleteNode(rootNode,80);
+        System.out.println(data.data);
+        binaryTree.preOrderTraversal(rootNode);
+//        Integer a=5;
+//        Integer b=2;
+//        System.out.println(a.compareTo(b));
     }
 }
