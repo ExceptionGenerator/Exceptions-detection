@@ -2,7 +2,11 @@ package com.shiv.exception.competative;
 
 public class Algorithm {
     public static void main(String[] args) {
-
+        int[] array={1,3,5,6};
+        var algo=new Algorithm();
+        long startTime=System.currentTimeMillis();
+        System.out.println(algo.searchInsert(array,7));
+        System.out.println("Time - "+(System.currentTimeMillis()-startTime)+" ms");
     }
 
     /**
@@ -22,18 +26,17 @@ public class Algorithm {
      * @return
      */
     public int searchInsert(int[] nums, int target) {
-        if(target<nums[0])
-            return 0;
-        if(target>nums[nums.length-1])
-            return nums.length;
-        for(int i=0;i<nums.length-1;i++){
-            if(nums[i]==target)
-                return i;
-            else{
-                if(target>nums[i] && target<nums[i+1])
-                    return i+1;
-            }
+        int beginIndex=0;
+        int lastIndex=nums.length-1;
+        while(beginIndex<=lastIndex){
+            int mid=(beginIndex+lastIndex)/2;
+            if(target<nums[mid])
+                lastIndex=mid-1;
+            else if(target>nums[mid])
+                beginIndex=mid+1;
+            else
+                return mid;
         }
-        return 0;
+        return beginIndex;
     }
 }
