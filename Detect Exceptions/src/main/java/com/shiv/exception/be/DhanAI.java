@@ -1,4 +1,4 @@
-package com.shiv.exception;
+package com.shiv.exception.be;
 // Java Program to find the smallest positive missing number
 import java.util.*;
 public class DhanAI {
