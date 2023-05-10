@@ -11,7 +11,6 @@ import java.nio.file.StandardCopyOption;
 @Builder
 public class CopyFileData {
     public static void main(String[] args) throws IOException {
-
         long totalBytes= CopyFileData.builder().build().copy("shg.txt");
         System.out.println(totalBytes);
     }
