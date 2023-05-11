@@ -23,6 +23,10 @@ public class Algorithm {
      * @return
      */
     public static int mySqrt(int x) {
+        if(x==0)
+            return x;
+        if(x>0 && x<=3)
+            return 1;
         for(int i=2;i<x;i++){
             if((i*i)==x)
                 return i;
