@@ -14,6 +14,26 @@ public class Algorithm {
     }
 
     /**
+     * find square root without using built-in function
+     * input 9
+     * output 3
+     * input 8
+     * output 2
+     * @param x
+     * @return
+     */
+    public static int mySqrt(int x) {
+        for(int i=2;i<x;i++){
+            if((i*i)==x)
+                return i;
+            else
+            if(((i*i)<x && ((i+1)*(i+1))>x) || ((i*i)<x && ((i+1)*(i+1))<0))
+                return i;
+        }
+        return 0;
+    }
+
+    /**
      * Input: a = "11", b = "1"
      * Output: "100"
      * Input: a = "1010", b = "1011"
