@@ -1,11 +1,12 @@
 package com.shiv.exception.competative;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Algorithm {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] array={1,3,3,3,5,6};
         var algo=new Algorithm();
         long startTime=System.currentTimeMillis();
@@ -196,4 +197,120 @@ public class Algorithm {
         Arrays.stream(strings).forEach(System.out::println);
         return strings[strings.length-1];
     }
+
+    /**
+     * Example 1:
+     *
+     * Input: s = "aab" aba
+     * Output: "aba"
+     *
+     * Example 2:
+     *
+     * Input: s = "aaab"
+     * Output: ""
+     * @param s
+     * @return
+     */
+    public static String reOrganize(String s){
+        char[] chars=s.toCharArray();
+        for(int i=0;i<chars.length;i++){
+            if(chars[i]==chars[i+1]){
+                swap(chars,i+1,i+2);
+                if (chars[i]==chars[i+1])
+                    return "";
+            }
+        }
+        return chars.toString();
+    }
+
+
+
+    private static void swap(char[] chars,int firstIndex,int secondIndex){
+        char temp=chars[firstIndex];
+        chars[firstIndex]=chars[secondIndex];
+        chars[secondIndex]=temp;
+    }
+
+    /**
+     * [3,2,3] >> 6 >> [0,2]
+     1 2 3 5
+     1>>2
+     2>>3
+     3>>5
+     */
+    public static int[] twoSum(int[] nums, int target) {
+        int[] indices=new int[2];
+        for(int j=0;j<nums.length;j++){
+            for(int i=0;i<nums.length;i++){
+                if(i!=j && (nums[j]+nums[i]) == target){
+                    indices[0]=j;
+                    indices[1]=i;
+                    return indices;
+                }
+            }
+        }
+        return indices;
+    }
+
+    public static void main(String[] args) {
+        ListNode listNode=new ListNode(2);
+        listNode.next=new ListNode(4);
+        listNode.next.next=new ListNode(3);
+        ListNode listNode2=new ListNode(5);
+        listNode2.next=new ListNode(0);
+        listNode2.next.next=new ListNode(32);
+        addTwoNumbers(listNode,listNode2);
+    }
+
+    /**
+     * Input: l1 = [2,4,3], l2 = [5,6,4]
+     * Output: [7,0,8]
+     * Explanation: 342 + 465 = 807.
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        BigInteger bigInteger1=new BigInteger(readElements(l1));
+        BigInteger bigInteger2=new BigInteger(readElements(l2));
+        BigInteger sum=bigInteger1.add(bigInteger2);
+        String[] result=new StringBuilder(""+sum).reverse().toString().split("");
+        ListNode listNode=new ListNode(Integer.parseInt(result[0]));
+        for(int i=1;i<result.length;i++)
+            insert(listNode,Integer.parseInt(result[i]));
+        return listNode;
+    }
+
+    private static void insert(ListNode root,int value){
+        ListNode temp=root;
+        while (temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=new ListNode(value);
+    }
+    private static String readElements(ListNode listNode){
+        ListNode temp=listNode;
+        StringBuilder stringBuilder=new StringBuilder();
+        while(temp!=null){
+            System.out.println(temp.val);
+            stringBuilder.append(temp.val);
+            temp=temp.next;
+        }
+        return stringBuilder.reverse().toString();
+    }
+
+
+}
+
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode() {}
+     ListNode(int val) {
+         this.val = val;
+     }
+     ListNode(int val, ListNode next) {
+         this.val = val;
+         this.next = next;
+     }
 }
