@@ -1,9 +1,7 @@
 package com.shiv.exception.competative;
 
 import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Algorithm {
     public static void main1(String[] args) {
@@ -252,15 +250,62 @@ public class Algorithm {
         return indices;
     }
 
-    public static void main(String[] args) {
-        ListNode listNode=new ListNode(2);
-        listNode.next=new ListNode(4);
-        listNode.next.next=new ListNode(3);
-        ListNode listNode2=new ListNode(5);
-        listNode2.next=new ListNode(0);
-        listNode2.next.next=new ListNode(32);
-        addTwoNumbers(listNode,listNode2);
+    public static void main1w(String[] args) {
+//        ListNode listNode=new ListNode(2);
+//        listNode.next=new ListNode(4);
+//        listNode.next.next=new ListNode(3);
+//        ListNode listNode2=new ListNode(5);
+//        listNode2.next=new ListNode(0);
+//        listNode2.next.next=new ListNode(32);
+//        addTwoNumbers(listNode,listNode2);
+        System.out.println(removeAdjacentCharacter("bbbbb"));
     }
+    /**
+     * derddrtrrf derdrtrf
+     * @param string
+     * @return
+     */
+    private static String removeAdjacentCharacter(String string){
+        StringBuilder stringBuilder=new StringBuilder();
+        for(int i=0;i<string.length()-1;i++){
+            if(!stringBuilder.isEmpty() && stringBuilder.charAt(stringBuilder.length()-1)==string.charAt(i+1)){
+                stringBuilder.append(string.charAt(i));
+                i++;
+            }else
+                stringBuilder.append(string.charAt(i));
+        }
+        if(!stringBuilder.isEmpty() && stringBuilder.toString().charAt(stringBuilder.length()-1)!=string.charAt(string.length()-1))
+            stringBuilder.append(string.charAt(string.length()-1));
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Given a string s, find the length of the longest
+     * substring
+     * without repeating characters.
+     * Input: s = "abcabcbb"
+     * Output: 3
+     * Explanation: The answer is "abc", with the length of 3.
+     * Example 2:
+     * <p>
+     * Input: s = "bbbbb"
+     * Output: 1
+     * Explanation: The answer is "b", with the length of 1.
+     * Example 3:
+     * <p>
+     * Input: s = "pwwkew"
+     * Output: 3
+     * Explanation: The answer is "wke", with the length of 3.
+     * Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+     * @param s
+     * @return
+     */
+    public static int lengthOfLongestSubstring(String s) {
+        String removedAdjacentString=removeAdjacentCharacter(s);
+        return 0;
+    }
+
+
 
     /**
      * Input: l1 = [2,4,3], l2 = [5,6,4]
@@ -297,6 +342,48 @@ public class Algorithm {
             temp=temp.next;
         }
         return stringBuilder.reverse().toString();
+    }
+
+    /**
+     * Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+     *
+     * The overall run time complexity should be O(log (m+n)).
+     *
+     *
+     *
+     * Example 1:
+     *
+     * Input: nums1 = [1,3], nums2 = [2,4,5]
+     * Output: 2.00000
+     * Explanation: merged array = [1,2,3] and median is 2.
+     *
+     * Example 2:
+     *
+     * Input: nums1 = [1,2], nums2 = [3,4]
+     * Output: 2.50000
+     * Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        List<Integer> list=new ArrayList<>();
+        Arrays.stream(nums1).forEach(list::add);
+        Arrays.stream(nums2).forEach(list::add);
+        Collections.sort(list);
+        int sumOfLength=nums1.length+nums2.length;
+        int index=sumOfLength/2;
+        if(sumOfLength%2!=0){
+            return list.get(index);
+        }else {
+            double lastValue=list.get(index);
+            double initValue=list.get(index-1);
+            return (initValue+lastValue)/2;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(findMedianSortedArrays(new int[]{1,3},new int[]{2}));
     }
 
 
