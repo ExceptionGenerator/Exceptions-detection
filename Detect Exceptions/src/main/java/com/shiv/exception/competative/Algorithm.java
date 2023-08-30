@@ -383,7 +383,63 @@ public class Algorithm {
     }
 
     public static void main(String[] args) {
-        System.out.println(findMedianSortedArrays(new int[]{1,3},new int[]{2}));
+//        if(System.out.printf("Hello world")==null){}
+//        long current=System.currentTimeMillis();
+//        System.out.println(findMedianSortedArrays(new int[]{1,3,3,4,5,5,6},new int[]{}));
+//        long end=System.currentTimeMillis();
+//        System.out.println("ms-"+(end-current));
+//        List<ListNode> list=new ArrayList<>();
+//        list.add(new ListNode(2));
+//        list.add(new ListNode(3));
+//        list.add(new ListNode(4));
+//        list.parallelStream().map(listNode -> listNode.val=listNode.val*3)
+//                .forEach(System.out::println);
+//        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
+//        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
+//        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
+        ListNode listNode=new ListNode(1);
+        listNode.next=new ListNode(2);
+        listNode.next.next=new ListNode(3);
+        listNode.next.next.next=new ListNode(4);
+        listNode.next.next.next.next=new ListNode(5);
+        System.out.println(removeNthFromEnd(listNode,2));
+    }
+
+    /**
+     *
+     * @param head [1,2], 2 -> len=2,n=2  -> nth=len-n
+     *                                      -> sub=2-2 -> nth=2-0=2th element should be deleted
+     * @param n len-n
+     * @return
+     */
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        int length=getLength(head);
+        if(length==1 && n==1)
+            return null;
+        if(length==n)
+            head=head.next;
+        length-=n;
+        int count=0;
+        ListNode tempNode=head;
+        while (tempNode!=null){
+            if(count==length-1){
+                tempNode.next=tempNode.next.next;
+                break;
+            }
+            tempNode=tempNode.next;
+            count++;
+        }
+        return head;
+    }
+
+    private static int getLength(ListNode listNode){
+        ListNode tempNode=listNode;
+        int length=0;
+        while (tempNode!=null){
+            length++;
+            tempNode=tempNode.next;
+        }
+        return length;
     }
 
 
@@ -400,4 +456,12 @@ class ListNode {
          this.val = val;
          this.next = next;
      }
+
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                ", next=" + next +
+                '}';
+    }
 }
