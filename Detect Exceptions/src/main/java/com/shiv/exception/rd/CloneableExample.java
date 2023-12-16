@@ -3,7 +3,6 @@ package com.shiv.exception.rd;
 import lombok.*;
 
 import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
 
 @Data
 @RequiredArgsConstructor
@@ -138,7 +137,7 @@ public class CloneableExample implements Cloneable {
     public static boolean isValidParenthesis(char[] parenthesis) {
         Stack<BracketCloseable> stack = new Stack<>();
         for (int i = 0; i < parenthesis.length; i++) {
-            if (!closeableBracket(parenthesis[i]))
+            if (!isCloseableBracket(parenthesis[i]))
                 stack.push(new BracketCloseable(parenthesis[i], null));
             else {
                 var lastElementFromStack = stack.lastElement();
@@ -167,7 +166,7 @@ public class CloneableExample implements Cloneable {
         return 0;
     }
 
-    private static boolean closeableBracket(char ch) {
+    private static boolean isCloseableBracket(char ch) {
         if (ch == ')')
             return true;
         else if (ch == '}')
@@ -177,12 +176,13 @@ public class CloneableExample implements Cloneable {
         return false;
     }
 
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class BracketCloseable {
+        Character open;
+        Character close;
+    }
 }
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class BracketCloseable {
-    Character open;
-    Character close;
-}
+
