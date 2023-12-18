@@ -119,7 +119,7 @@ public class CloneableExample implements Cloneable {
     }
 
     public static void main(String[] args) {
-        System.out.println(isValidParenthesis("{((()))[]}".toCharArray()));
+        System.out.println(isValidParenthesis("{(((".toCharArray()));
     }
 
     /**
@@ -153,6 +153,8 @@ public class CloneableExample implements Cloneable {
                 }
             }
         }
+        if(stack.size()>0)
+            return false;
         return true;
     }
 
