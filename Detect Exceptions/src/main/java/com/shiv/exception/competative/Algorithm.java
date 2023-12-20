@@ -2,6 +2,8 @@ package com.shiv.exception.competative;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Algorithm {
     public static void main1(String[] args) {
@@ -382,7 +384,29 @@ public class Algorithm {
         }
     }
 
+
+    /**
+     *  1 2 3
+     *  3 2 1
+     *
+     *       1 2 3
+     *     2 4 6
+     *   3 6 9
+     *
+     *
+     *   3 9 4 8 3
+     * @param args
+     */
     public static void main(String[] args) {
+        String dtr="";
+        Set<Integer> set=new HashSet<Integer>();
+        set.add(23);
+        set.add(2);
+        set.add(243);
+        set.add(21);
+        List<Integer> list=new ArrayList<>(set);
+        Collections.sort(list);
+        System.out.println(list);
 //        if(System.out.printf("Hello world")==null){}
 //        long current=System.currentTimeMillis();
 //        System.out.println(findMedianSortedArrays(new int[]{1,3,3,4,5,5,6},new int[]{}));
@@ -397,12 +421,12 @@ public class Algorithm {
 //        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
 //        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
 //        list.parallelStream().map(listNode -> listNode.val=listNode.val*3).forEach(System.out::println);
-        ListNode listNode=new ListNode(1);
-        listNode.next=new ListNode(2);
-        listNode.next.next=new ListNode(3);
-        listNode.next.next.next=new ListNode(4);
-        listNode.next.next.next.next=new ListNode(5);
-        System.out.println(removeNthFromEnd(listNode,2));
+//        ListNode listNode=new ListNode(1);
+//        listNode.next=new ListNode(2);
+//        listNode.next.next=new ListNode(3);
+//        listNode.next.next.next=new ListNode(4);
+//        listNode.next.next.next.next=new ListNode(5);
+//        System.out.println(removeNthFromEnd(listNode,2));
     }
 
     /**
