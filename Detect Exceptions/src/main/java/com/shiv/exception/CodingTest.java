@@ -1,5 +1,6 @@
 package com.shiv.exception;
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -48,11 +49,59 @@ public class CodingTest {
         }
     }
 
+    /**
+     * 123
+     *
+     * 321
+     * 321
+     *
+     * @param arr
+     * @param i
+     * @param j
+     */
     private static void swap(int[] arr,int i,int j){
+
         int temp=arr[i];
         arr[i]=arr[j];
         arr[j]=temp;
+        char ch='d';
+        out.println(Integer.parseInt(String.valueOf(ch)));
     }
+
+    /**
+     * 5 /2 -> 2
+     * 9/2 -> 4
+     * @param numerator
+     * @param denominator
+     * @return
+     */
+    private static int divide(int numerator,int denominator){
+        int result=0;
+        for(int i=denominator;i<=numerator;i+=denominator)
+            result++;
+        return result;
+    }
+
+    public static String removeStars(String s) {
+        Stack<Character> stack=new Stack();
+        char[] chars=s.toCharArray();
+        for(int i=0;i<chars.length;i++){
+            if(chars[i]!='*')
+                stack.push(chars[i]);
+            else if(stack.lastElement()!=null) {
+                stack.pop();
+            }
+        }
+        StringBuilder stringBuilder=new StringBuilder();
+        stack.forEach(stringBuilder::append);
+        return stringBuilder.toString();
+    }
+
+//    public static void main(String[] args) {
+//        StringBuilder stringBuilder=new StringBuilder("shiv");
+//        out.println(removeStars("leet**cod*e"));
+//        out.println(removeStars("eraswe*****"));
+//    }
 
     /**
      *
@@ -159,7 +208,7 @@ public class CodingTest {
     }
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main1(String[] args) throws InterruptedException {
         out.println(removeDuplicateLetters("bcabc"));
 //        out.println('a'<'b');
         // c d a
@@ -214,6 +263,87 @@ public class CodingTest {
         System.out.println("Ended----" + number);
     }
 
+    public static void main(String[] args) {
+
+    }
+
+    /**
+     * ["BrowserHistory","visit","visit","visit","back","back","forward","visit","forward","back","back"]
+     * [["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1],[1],[1],["linkedin.com"],[2],[2],[7]]
+     *
+     * current - leetcode.com
+     * current - google.com
+     * current - facebook.com
+     * current - youtube.com
+     * back - 1
+     * back - 1
+     * forward - 1
+     * current - linkedin.com
+     * forward - 2
+     * back - 2
+     * back - 7
+     *
+     * [null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","facebook.com","leetcode.com"]
+     *
+     * [null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","google.com","leetcode.com"]
+     */
+    class BrowserHistory {
+
+        private Node head;
+        private Node current;
+
+        public BrowserHistory(String homepage) {
+            head=new Node(homepage);
+            current=head;
+        }
+
+        public void visit(String url) {
+            addNode(new Node(url));
+        }
+
+        public String back(int steps) {
+            while(current.prevNode!=null){
+                steps--;
+                current=current.prevNode;
+                if(steps==0)
+                    break;
+            }
+            return current.url;
+        }
+
+        public String forward(int steps) {
+            while(current.nextNode!=null){
+                steps--;
+                current=current.nextNode;
+                if(steps==0)
+                    break;
+            }
+            return current.url;
+        }
+
+        private void addNode(Node node){
+            current.nextNode=node;
+            node.prevNode=current;
+            current=current.nextNode;
+        }
+    }
+
+    private class Node{
+        Node prevNode;
+        Node nextNode;
+        String url;
+        public Node(String url){
+            this.url=url;
+        }
+    }
+
+/**
+ * Your BrowserHistory object will be instantiated and called as such:
+ * BrowserHistory obj = new BrowserHistory(homepage);
+ * obj.visit(url);
+ * String param_2 = obj.back(steps);
+ * String param_3 = obj.forward(steps);
+ */
 
 }
 
