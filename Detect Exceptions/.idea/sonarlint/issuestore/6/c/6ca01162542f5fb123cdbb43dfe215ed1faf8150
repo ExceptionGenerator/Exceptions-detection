@@ -1,0 +1,13 @@
+
+d
+java:S2259:"BA "NullPointerException" could be thrown; "root" is nullable here.(óÃ•„ùÿÿÿÿ8† ù¼á1
+L	java:S106"+Replace this use of System.out by a logger.(ã—ƒÛúÿÿÿÿ8§‹ü¼á1
+X	java:S125"<This block of commented-out lines of code should be removed.(áÚ‡‡8Š ù¼á1
+{
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Çá‚úøÿÿÿÿ8 ù¼á1
+@
+java:S1659O"#Declare "right" on a separate line.(çùà¶8™ ù¼á1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8› ù¼á1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8Ê‡ÿ¼á1

@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -426,6 +427,9 @@ public class Algorithm {
      * @param args
      */
     public static void main(String[] args) throws InterruptedException {
+        List<Integer> list=new ArrayList<>();
+        list.sort(Comparator.comparingInt(Integer::intValue).reversed());
+
 //        CountDownLatch countDownLatch=new CountDownLatch(1);
 //        countDownLatch.await(3,TimeUnit.SECONDS);
 //        AtomicLong atomicLong=new AtomicLong();

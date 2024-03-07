@@ -1,4 +1,4 @@
-package com.shiv.exception;
+package com.shiv.exception.random;
 
 import com.google.gson.Gson;
 
@@ -6,12 +6,38 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OnlineTest {
     public static void main(String[] args) throws Throwable {
-        System.out.println("Discounted price = " + discountedPrice(74001795));
-        System.out.println("Discounted price = " + discountedPrice(740017));
+//        System.out.println("Discounted price = " + discountedPrice(74001795));
+//        Math.round()
+//        System.out.println("Discounted price = " + discountedPrice(74000548));
+        //807.5 -> 808  9218868437227405312L
+//        System.out.println(9218868437227405312L);
+//        System.out.println(Math.round(5.5d));
+        System.out.println(isIsomorphic("badc","baba"));
+    }
+    public static boolean isIsomorphic(String s, String t) {
+        if(s.length()!=t.length())
+            return false;
+        Map<Character,Character> map=new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            if(map.get(s.charAt(i))==null){
+                int finalI = i;
+                Character character1= map.values().parallelStream()
+                                .filter(character -> character==t.charAt(finalI)).findFirst()
+                        .orElse(null);
+                if(character1!=null)
+                    return false;
+                map.put(s.charAt(i),t.charAt(i));
+            }
+            if(t.charAt(i)!=map.get(s.charAt(i)))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -42,7 +68,7 @@ public class OnlineTest {
         if (dataList.getData().isEmpty())
             return -1;
         Data data = dataList.getData().get(0);
-        return (int) (data.getPrice() - ((data.getDiscount() / 100) * data.getPrice()));
+        return (int) Math.round(data.getPrice() - ((data.getDiscount() / 100) * data.getPrice()));
     }
 
 }

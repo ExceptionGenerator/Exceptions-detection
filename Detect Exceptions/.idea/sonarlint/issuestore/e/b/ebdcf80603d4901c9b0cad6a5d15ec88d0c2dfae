@@ -1,0 +1,11 @@
+
+Q	java:S125"<This block of commented-out lines of code should be removed.(ŠÈ”
+@	java:S106"+Replace this use of System.out by a logger.(•¯İ
+@	java:S106"+Replace this use of System.out by a logger.(µˆœÑ
+Q	java:S125&"<This block of commented-out lines of code should be removed.(‘—¬
+@	java:S106M"+Replace this use of System.out by a logger.( ½Å
+E	java:S106N"+Replace this use of System.out by a logger.(›Óğ°şÿÿÿÿ
+\
+java:S1128"ARemove this unused import 'java.util.concurrent.ExecutorService'.(æ÷–£ùÿÿÿÿ
+V
+java:S1128";Remove this unused import 'java.util.concurrent.Executors'.(äåÒÛÿÿÿÿÿ

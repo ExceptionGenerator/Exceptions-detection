@@ -6,6 +6,7 @@ public class StackImpl<T> {
     private T[] stack;
     private int tos=-1;
 
+//    @IDCResource(displayName = "Shiv", resourceCode = "DTR", getStatus = true)
     public StackImpl(int stackSize){
         stack= (T[]) new Object[stackSize];
         this.stackSize=stackSize;

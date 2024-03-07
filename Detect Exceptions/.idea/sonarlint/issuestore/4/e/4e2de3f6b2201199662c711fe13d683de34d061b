@@ -1,0 +1,28 @@
+
+€
+java:S1488w"^Immediately return this expression instead of assigning it to the temporary variable "result".(°í²àıÿÿÿÿ8”ªó×Õ1
+n
+java:S2259"KA "NullPointerException" could be thrown; "messageDigest" is nullable here.(µ–„Ñúÿÿÿÿ8Î¦ıóÕ1
+™
+java:S1130"wRemove the declaration of thrown exception 'java.lang.NoSuchFieldException', as it cannot be thrown from method's body.(œÔÒœùÿÿÿÿ8Ñ˜€ôÕ1
+›
+java:S1130"yRemove the declaration of thrown exception 'java.lang.IllegalAccessException', as it cannot be thrown from method's body.(œÔÒœùÿÿÿÿ8Ò˜€ôÕ1
+G	java:S106%"+Replace this use of System.out by a logger.(Ü»¢©8Şªó×Õ1
+X	java:S125"<This block of commented-out lines of code should be removed.(¾¹ô›8Ïªó×Õ1
+j	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æƒ€­8Ôªó×Õ1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½‚©Òøÿÿÿÿ8×ªó×Õ1
+L	java:S106;"+Replace this use of System.out by a logger.(Ã®¥Íşÿÿÿÿ8¯çØÕ1
+X	java:S125:"<This block of commented-out lines of code should be removed.(—÷Ë¡8İªó×Õ1
+F	java:S106<"+Replace this use of System.out by a logger.(°¬«8İ˜€ôÕ1
+G
+java:S1197I"*Move the array designators [] to the type.( óë8áªó×Õ1
+o	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë‡Ôúÿÿÿÿ8âªó×Õ1
+j	java:S100e"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷€‚’8èªó×Õ1
+J
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8»èşóÕ1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8»èşóÕ1
+Y
+java:S1128"7Remove this unused import 'java.util.stream.Collector'.(ß‹ÎÓøÿÿÿÿ8¼èşóÕ1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8¼èşóÕ1

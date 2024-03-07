@@ -1,0 +1,86 @@
+
+L
+java:S3740["/Provide the parametrized type for this generic.(İ˜üğ8ÿô«ÜÙ1
+_
+java:S4973"<Strings and Boxed types should be compared using "equals()".(ëçÙäÿÿÿÿÿ8õ«ÜÙ1
+e
+java:S1226Í"BIntroduce a new variable instead of reusing the parameter "start".(Æ©ıÙıÿÿÿÿ8¼õ«ÜÙ1
+L	java:S106	"+Replace this use of System.out by a logger.(“×·ôşÿÿÿÿ8„ø«ÜÙ1
+m
+java:S1149["PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(İ˜üğ8Šø«ÜÙ1
+s
+java:S1149„"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ÑÖÙƒıÿÿÿÿ8Šø«ÜÙ1
+s
+java:S1149¶"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ÑÖÙƒıÿÿÿÿ8Šø«ÜÙ1
+n
+java:S1149Ä"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(«æÖÅ8‹ø«ÜÙ1
+n
+java:S1149Ä"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(«æÖÅ8‹ø«ÜÙ1
+n
+java:S1149Ê"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(Ï—€æ8‹ø«ÜÙ1
+s
+java:S1149¹"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ8Œø«ÜÙ1
+]	java:S125i"<This block of commented-out lines of code should be removed.(»•ûÿÿÿÿ8£ø«ÜÙ1
+a
+java:S1155‰">Use isEmpty() to check whether the collection is empty or not.(î«š³øÿÿÿÿ8¨ø«ÜÙ1
+a
+java:S1155”">Use isEmpty() to check whether the collection is empty or not.(í•ÇŸùÿÿÿÿ8«ø«ÜÙ1
+_
+java:S1126§"AReplace this if-then-else statement by a single return statement.(üÉ¾‘8®ø«ÜÙ1
+`
+java:S1612À"BReplace this lambda with method reference 'stringBuilder::append'.(«çÆ8³ø«ÜÙ1
+•
+java:S1130Ø"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ü‘ğé8½ø«ÜÙ1
+I
+java:S1172Ø"+Remove this unused method parameter "args".(ü‘ğé8¾ø«ÜÙ1
+Y	java:S125Ú"<This block of commented-out lines of code should be removed.(Ëå†¥8Áø«ÜÙ1
+M
+java:S1197ó"*Move the array designators [] to the type.(“óÙÿÿÿÿÿ8Ãø«ÜÙ1
+\
+java:S1854„">Remove this useless assignment to local variable "codingTest".(Ù¸Å 8Ëø«ÜÙ1
+h
+java:S1124ƒ"EReorder the modifiers to comply with the Java Language Specification.(³ùÎÂùÿÿÿÿ8Ìø«ÜÙ1
+M
+java:S1481„"/Remove this unused "codingTest" local variable.(Ù¸Å 8Íø«ÜÙ1
+M	java:S106…"+Replace this use of System.out by a logger.(µĞ¶Ñÿÿÿÿÿ8Îø«ÜÙ1
+D
+java:S1860†"&Synchronize on a new "Object" instead.(‰…ßÎ8Îø«ÜÙ1
+i
+java:S2445†"K"number" is a method parameter, and should not be used for synchronization.(‰…ßÎ8Ïø«ÜÙ1
+H	java:S106‡"+Replace this use of System.out by a logger.(ó±Ì´8Ğø«ÜÙ1
+M	java:S106Š"+Replace this use of System.out by a logger.(¬ãŠÿÿÿÿÿ8Òø«ÜÙ1
+H	java:S106Œ"+Replace this use of System.out by a logger.(’²–£8Óø«ÜÙ1
+N
+java:S1172"+Remove this unused method parameter "args".(üÎÆıÿÿÿÿ8Õø«ÜÙ1
+s
+java:S1149¹"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ8Ùø«ÜÙ1
+J
+java:S3985–",Remove this unused private "Solution" class.(ø‘Áæ8Ùø«ÜÙ1
+\
+java:S1854¹"9Remove this useless assignment to local variable "stack".(û›şöıÿÿÿÿ8ßø«ÜÙ1
+]
+java:S1117¹":Rename "stack" which hides the field declared at line 279.(û›şöıÿÿÿÿ8àø«ÜÙ1
+M
+java:S1481¹"*Remove this unused "stack" local variable.(û›şöıÿÿÿÿ8áø«ÜÙ1
+Y	java:S125¼"<This block of commented-out lines of code should be removed.(ˆı™ñ8ãø«ÜÙ1
+9
+java:S1116Ê"Remove this empty statement.(˜¼³8èø«ÜÙ1
+Y	java:S125¥"<This block of commented-out lines of code should be removed.(’¿‡Ó8õø«ÜÙ1
+Y
+java:S1128"7Remove this unused import 'java.security.SecureRandom'.(›éè™úÿÿÿÿ8şø«ÜÙ1
+_
+java:S1144"=Remove this unused private "sortArrayUsingBubbleSort" method.(Ê‚Â‡øÿÿÿÿ8ÿø«ÜÙ1
+\
+java:S1144!"@Remove this unused private "sortArrayUsingSelectionSort" method.(Õ­*8ÿø«ÜÙ1
+]
+java:S1144,"@Remove this unused private "sortArrayUsingInsertionSort" method.(úÁÑ‰8€ù«ÜÙ1
+M
+java:S1144S"+Remove this unused private "divide" method.(Ï¸ì•üÿÿÿÿ8€ù«ÜÙ1
+^
+java:S1144t"<Remove this unused private "searchUsingBinarySearch" method.(Ÿ„Áüÿÿÿÿ8ù«ÜÙ1
+U
+java:S1144ò"2Remove this unused private "graphLearning" method.(ÚÚºúÿÿÿÿ8ù«ÜÙ1
+F
+java:S1144š")Remove this unused private "push" method.(Àıä,8‚ù«ÜÙ1
+E
+java:S1144¤"(Remove this unused private "pop" method.(âºÁd8‚ù«ÜÙ1

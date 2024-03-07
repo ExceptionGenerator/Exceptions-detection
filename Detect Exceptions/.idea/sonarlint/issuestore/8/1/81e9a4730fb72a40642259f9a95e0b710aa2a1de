@@ -1,0 +1,48 @@
+
+u	java:S127œ"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8Œ†Ğ¹á1
+9
+java:S1643o"Use a StringBuilder instead.(õë†›8†Ğ¹á1
+e
+java:S2259ñ"BA "NullPointerException" could be thrown; "head" is nullable here.(‘¡–òùÿÿÿÿ8ü‰Ğ¹á1
+Z
+java:S1854"8Remove this useless assignment to local variable "algo".(­à‹ıÿÿÿÿ8ŠĞ¹á1
+V
+java:S1854"9Remove this useless assignment to local variable "array".(Ğ–ğ‰8ŠĞ¹á1
+M
+java:S1172"+Remove this unused method parameter "args".(À»Áùÿÿÿÿ8‚ŠĞ¹á1
+G
+java:S1481"*Remove this unused "array" local variable.(Ğ–ğ‰8‚ŠĞ¹á1
+K
+java:S1481")Remove this unused "algo" local variable.(­à‹ıÿÿÿÿ8ƒŠĞ¹á1
+L	java:S106"+Replace this use of System.out by a logger.(ŞÃ°ƒøÿÿÿÿ8ƒŠĞ¹á1
+L	java:S106"+Replace this use of System.out by a logger.(ÆùÃúÿÿÿÿ8„ŠĞ¹á1
+i
+java:S1871-"LThis branch's code block is the same as the block for the branch on line 42.(”íÅÍ8…ŠĞ¹á1
+t
+java:S3776;"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(Ÿ²çüÿÿÿÿ8†ŠĞ¹á1
+w
+java:S3012¢"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ùı¨ˆ8ŠĞ¹á1
+p	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°“Çêûÿÿÿÿ8ŠĞ¹á1
+W
+java:S1854À"9Remove this useless assignment to local variable "digit".(Ò½¿8ŠĞ¹á1
+N
+java:S1172¨"+Remove this unused method parameter "args".(°“Çêûÿÿÿÿ8ŠĞ¹á1
+H	java:S106±"+Replace this use of System.out by a logger.(µˆœÑ8“ŠĞ¹á1
+M	java:S106Ç"+Replace this use of System.out by a logger.(¸¨³›øÿÿÿÿ8“ŠĞ¹á1
+M	java:S106É"+Replace this use of System.out by a logger.(ò¬«ôùÿÿÿÿ8”ŠĞ¹á1
+M	java:S106Î"+Replace this use of System.out by a logger.(Ôã«±ûÿÿÿÿ8–ŠĞ¹á1
+C
+java:S2116è"%Use "Arrays.toString(array)" instead.(ƒâÓ¸8˜ŠĞ¹á1
+I
+java:S1172ˆ"+Remove this unused method parameter "args".(ÎÌ¼Î8›ŠĞ¹á1
+M	java:S106"+Replace this use of System.out by a logger.(ç¥¦…şÿÿÿÿ8œŠĞ¹á1
+Y	java:S125‰"<This block of commented-out lines of code should be removed.(¯ÎÀ´8œŠĞ¹á1
+l
+java:S1854»"IRemove this useless assignment to local variable "removedAdjacentString".(Ûµ½èøÿÿÿÿ8 ŠĞ¹á1
+]
+java:S1481»":Remove this unused "removedAdjacentString" local variable.(Ûµ½èøÿÿÿÿ8¡ŠĞ¹á1
+G	java:S106ß"+Replace this use of System.out by a logger.(ò„§H8§ŠĞ¹á1
+Y	java:S125±"<This block of commented-out lines of code should be removed.(”áôï8¯ŠĞ¹á1
+H	java:S106Ê"+Replace this use of System.out by a logger.(¸‰îÌ8²ŠĞ¹á1
+M	java:S106Ë"+Replace this use of System.out by a logger.(Èõ‹‚ÿÿÿÿÿ8²ŠĞ¹á1
+^	java:S125Î"<This block of commented-out lines of code should be removed.(†‘Òôÿÿÿÿÿ8³ŠĞ¹á1
