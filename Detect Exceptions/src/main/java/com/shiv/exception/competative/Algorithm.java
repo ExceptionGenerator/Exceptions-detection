@@ -1,9 +1,17 @@
 package com.shiv.exception.competative;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigInteger;
-import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Algorithm {
     public static void main1(String[] args) {
@@ -383,6 +391,26 @@ public class Algorithm {
             return (initValue+lastValue)/2;
         }
     }
+    public static int countPrimes(int n) {
+        if(n<2)
+            return 0;
+        int primeCount=0;
+        for(int i=2;i<n;i++){
+            if(isPrimeNumber(i))
+                primeCount++;
+        }
+        return primeCount;
+    }
+
+    private static boolean isPrimeNumber(int n){
+        for(int i=n;i>1;i--){
+            if(n!=i && n%i==0)
+                return false;
+        }
+        return true;
+    }
+
+
 
 
     /**
@@ -397,16 +425,37 @@ public class Algorithm {
      *   3 9 4 8 3
      * @param args
      */
-    public static void main(String[] args) {
-        String dtr="";
-        Set<Integer> set=new HashSet<Integer>();
-        set.add(23);
-        set.add(2);
-        set.add(243);
-        set.add(21);
-        List<Integer> list=new ArrayList<>(set);
-        Collections.sort(list);
-        System.out.println(list);
+    public static void main(String[] args) throws InterruptedException {
+//        CountDownLatch countDownLatch=new CountDownLatch(1);
+//        countDownLatch.await(3,TimeUnit.SECONDS);
+//        AtomicLong atomicLong=new AtomicLong();
+//
+        FileSystem fileSystem=new FileSystem(true,new ArrayList<>(),0);
+
+        FileSystem fileSystem1=new FileSystem(true,null,0);
+        FileSystem fileSystem2=new FileSystem(false,null,5);
+        FileSystem fileSystem3=new FileSystem(false,null,8);
+        FileSystem fileSystem4=new FileSystem(true,null,0);
+        List<FileSystem> fileSystems=new ArrayList<>();
+        fileSystems.add(fileSystem1);
+        fileSystems.add(fileSystem2);
+        fileSystems.add(fileSystem3);
+        fileSystems.add(fileSystem4);
+
+        fileSystem.setContents(fileSystems);
+
+        List<FileSystem> fileSystems1=new ArrayList<>();
+        fileSystem1.setContents(fileSystems1);
+        FileSystem fileSystem5=new FileSystem(false,null,4);
+        FileSystem fileSystem6=new FileSystem(false,null,48);
+        fileSystems1.add(fileSystem5);
+        fileSystems1.add(fileSystem6);
+        int size= getSize(fileSystem);
+        System.out.println("Sum of files size - "+size);
+        System.out.println("Sum of files size test case - "+(size==65));
+
+
+//        System.out.println(countPrimes(10));
 //        if(System.out.printf("Hello world")==null){}
 //        long current=System.currentTimeMillis();
 //        System.out.println(findMedianSortedArrays(new int[]{1,3,3,4,5,5,6},new int[]{}));
@@ -466,7 +515,41 @@ public class Algorithm {
         return length;
     }
 
+    public static void getSizeOfAllFileSystems (final FileSystem fileSystem,
+            final AtomicLong atomicLong) {
+        if (!fileSystem.isDirectory())
+            atomicLong.set(atomicLong.get() + fileSystem.getSize());
+        if (fileSystem.isDirectory() && fileSystem.getContents() != null) {
+            fileSystem.getContents()
+                    .forEach(content -> {
+                        if (content.isDirectory())
+                            getSizeOfAllFileSystems(content, atomicLong);
+                        else
+                            atomicLong.set(atomicLong.get() + content.getSize());
+                    });
+        }
+    }
 
+    public static int getSize (FileSystem fileSystem) {
+        if (!fileSystem.isDirectory)
+            return fileSystem.size;
+        int size = 0;
+        if (fileSystem.contents != null)
+            for (FileSystem fileSystem1 : fileSystem.contents) {
+                size += getSize(fileSystem1);
+            }
+        return size;
+    }
+
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class FileSystem{
+    boolean isDirectory;
+    List<FileSystem> contents;
+    int size;  // if isDirectory = true then size will be 0
 }
 
 class ListNode {
