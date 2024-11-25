@@ -1,0 +1,6 @@
+
+k	java:S106	"+Replace this use of System.out by a logger.(ï£÷şÿÿÿÿJ$103f5b70-d709-46b3-b566-e9232ab74239
+s
+java:S1172"+Remove this unused method parameter "args".(À»Áùÿÿÿÿ8ƒûÄ¡´2J$ec7eea7a-8e31-429e-93c2-cf7b90ba0943
+k	java:S106"+Replace this use of System.out by a logger.(˜Š¿ÛüÿÿÿÿJ$4b5c0886-e783-4501-aead-609d710830d7
+r	java:S106"+Replace this use of System.out by a logger.(¾Å½®üÿÿÿÿ8‡ûÄ¡´2J$c1be2029-15cd-4eb2-9d2f-6c7add8f9eac

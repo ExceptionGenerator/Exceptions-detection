@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Detect Exceptions" />
+        <module name="Detect-Exceptions" />
       </profile>
     </annotationProcessing>
   </component>

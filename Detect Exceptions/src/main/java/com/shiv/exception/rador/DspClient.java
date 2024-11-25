@@ -14,11 +14,14 @@ public class DspClient {
             socket.setSoTimeout(5000); // 5 seconds timeout
 
             // Prepare a command to send
-            String commandMessage = "Hello, DSP Server!";
-            ByteBuffer command = ByteBuffer.wrap(commandMessage.getBytes());
+            final ByteBuffer commandBuffer = ByteBuffer.allocate(16);
+            commandBuffer.putInt(12);
+            commandBuffer.putInt(23);
+            commandBuffer.putInt(0x00000004);
+            commandBuffer.putInt(278);
 
             // Send the command to the server
-            sendCommand(socket, command);
+            sendCommand(socket, commandBuffer);
 
             // Receive the response
             ByteBuffer response = receiveResponse(socket);
@@ -31,6 +34,7 @@ public class DspClient {
     }
 
     private static void sendCommand(Socket socket, ByteBuffer command) throws IOException {
+        command.flip();
         try (OutputStream outputStream = socket.getOutputStream()) {
             byte[] commandBytes = new byte[command.remaining()];
             command.get(commandBytes);
@@ -48,8 +52,7 @@ public class DspClient {
                 log.warning("No response from server.");
                 return null;
             }
-            ByteBuffer responseByteBuffer = ByteBuffer.wrap(responseBuffer, 0, bytesRead);
-            return responseByteBuffer;
+            return ByteBuffer.wrap(responseBuffer, 0, bytesRead);
         }
     }
 

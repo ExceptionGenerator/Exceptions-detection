@@ -3,6 +3,7 @@ package com.shiv.exception.rador;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.nio.ByteBuffer;
 
 public class UDPServer {
 
@@ -18,7 +19,7 @@ public class UDPServer {
                 return "Unknown Command";
         }
     }
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int port = 12345;
 
         try (DatagramSocket socket = new DatagramSocket(port)) {
@@ -46,5 +47,19 @@ public class UDPServer {
             System.out.println("Server error: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        ByteBuffer commandBuffer = ByteBuffer.allocate(16);
+        commandBuffer.putInt(1);
+        commandBuffer.putInt(0xFF00FF0D);
+        commandBuffer.putInt(0x00000001);
+        commandBuffer.putInt(0x00000000);
+        commandBuffer.flip();
+            StringBuilder sb = new StringBuilder("Command Buffer Contents: ");
+            while (commandBuffer.hasRemaining()) {
+                sb.append(String.format("0x%08X ", commandBuffer.getInt()));
+            }
+        System.out.println(sb);
     }
 }

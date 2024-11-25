@@ -1,0 +1,21 @@
+
+~
+java:S1141–"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8õ¾àÃ´2J$b69b6e84-b7d1-4b12-9684-2c23a00be2ae
+“
+java:S1301i"KReplace this "switch" statement by "if" statements to increase readability.(Ë’˜ûÿÿÿÿ8±¤ñÃ´2J$d962d6cb-1b80-4963-bbea-429555a0a441
+‘
+java:S2259œ"MA "NullPointerException" could be thrown; "processCommand()" can return null.(ÇğÔÁ8¿âşÃ´2J$bf2d1f52-b067-4dab-96b1-fc3e3526bf58
+k
+java:S2189•""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ÀâşÃ´2J$8820217c-07b4-4b3a-8b93-ae0e3a4b76c5
+j
+java:S2189;""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8›¿àÃ´2J$ad850533-4fe3-47f2-96d0-e550bea50521
+m	java:S106:"+Replace this use of System.out by a logger.(âÉ¹˜8¡¿àÃ´2J$e6a446cc-36aa-4ef0-ba7c-5155746e9907
+l	java:S106="+Replace this use of System.out by a logger.(Ç’¹s8¡¿àÃ´2J$d1de998d-37ae-43ab-ae05-81a0003d40ab
+m	java:S106L"+Replace this use of System.out by a logger.(¹…àş8¢¿àÃ´2J$21f4456c-2d1c-47be-9c05-4d1a839d436d
+ƒ	java:S125M"<This block of commented-out lines of code should be removed.(¸öµàüÿÿÿÿ8£¿àÃ´2J$9d227869-1240-419f-83d5-f17e220a594f
+m	java:S106a"+Replace this use of System.out by a logger.(Äõ‘Å8£¿àÃ´2J$1d63967c-b49c-4a75-9df4-bc93ea16634e
+n	java:S106ƒ"+Replace this use of System.out by a logger.(îºæù8¥¿àÃ´2J$92942296-5611-436c-93a4-6f28082bd550
+n	java:S106ˆ"+Replace this use of System.err by a logger.(…ÂÓ8¤¿àÃ´2J$49accf5a-1363-4416-85b3-609b57abb82a
+n	java:S106“"+Replace this use of System.out by a logger.(òº‰‘8¥¿àÃ´2J$02233c97-ea8d-4643-81e2-f89a713c0a09
+s	java:S106›"+Replace this use of System.out by a logger.(ÜÕœíıÿÿÿÿ8¦¿àÃ´2J$bea61a2d-9d81-4ca6-97a3-bfb8b67f6372
+s	java:S106§"+Replace this use of System.out by a logger.(Ğ®šöûÿÿÿÿ8©–¾—µ2J$1e1e103f-d8f0-4bc7-9105-cdb6e1d29939

@@ -2,6 +2,8 @@ package com.shiv.exception.rador;
 import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class DspServer {
@@ -42,27 +44,28 @@ public class DspServer {
             ByteBuffer command = ByteBuffer.wrap(commandBuffer, 0, bytesRead);
             log.info("Received command from client: " + byteBufferToByteList(command));
 
-            // Process the command and create a response
-            String responseMessage = "ACK: Command received";
-            ByteBuffer responseByteBuffer = ByteBuffer.wrap(responseMessage.getBytes());
-
-            // Send the response
-            outputStream.write(responseByteBuffer.array());
+            final ByteBuffer commandBuffer1 = ByteBuffer.allocate(16);
+            commandBuffer1.putInt(12);
+            commandBuffer1.putInt(23);
+            commandBuffer1.putInt(0x00000004);
+            commandBuffer1.putInt(15);
+            outputStream.write(commandBuffer1.array());
             outputStream.flush();
-            log.info("Sent response to client: " + responseMessage);
+            log.info("Sent response to client: " + commandBuffer1);
         } catch (IOException e) {
             log.severe("Error handling client connection: " + e.getMessage());
         }
     }
 
     // Utility method to convert ByteBuffer to a readable list format
-    private static String byteBufferToByteList(ByteBuffer buffer) {
-        byte[] byteArray = new byte[buffer.remaining()];
-        buffer.get(byteArray);
-        StringBuilder sb = new StringBuilder();
-        for (byte b : byteArray) {
-            sb.append(String.format("%02X ", b));
+    public static List<Byte> byteBufferToByteList(ByteBuffer byteBuffer) {
+        byteBuffer.rewind();
+        final byte[] byteArray = new byte[byteBuffer.remaining()];
+        byteBuffer.get(byteArray);
+        final List<Byte> fifo = new ArrayList<>();
+        for (byte data : byteArray) {
+            fifo.add(data);
         }
-        return sb.toString().trim();
+        return fifo;
     }
 }

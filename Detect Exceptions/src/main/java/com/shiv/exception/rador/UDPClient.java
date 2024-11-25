@@ -6,6 +6,9 @@ import java.net.InetAddress;
 
 public class UDPClient {
     public static void main(String[] args) {
+        System.out.println(0xffff);
+    }
+    public static void main1(String[] args) {
         String hostname = "localhost";
         int port = 12345;
 
